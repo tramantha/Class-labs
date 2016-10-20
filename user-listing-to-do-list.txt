@@ -1,0 +1,473 @@
+-------------------> 1.Get First User
+irb(main):001:0> User.first
+  User Load (0.1ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+=> #<User id: 1, first_name: "Manley", last_name: "Aufderhar", email: "tabitha.brown@stromanconnelly.info", title: "Customer Applications Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">
+
+-------------------> 2.Get Last User
+irb(main):002:0> User.count
+   (0.3ms)  SELECT COUNT(*) FROM "users"
+=> 200
+irb(main):003:0> User.first
+  User Load (0.3ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."id" ASC LIMIT 1
+=> #<User id: 1, first_name: "Manley", last_name: "Aufderhar", email: "tabitha.brown@stromanconnelly.info", title: "Customer Applications Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">
+
+-------------------> 3.Get 10 Users
+irb(main):004:0> User.take(10)
+  User Load (0.2ms)  SELECT  "users".* FROM "users" LIMIT 10
+=> [#<User id: 1, first_name: "Manley", last_name: "Aufderhar", email: "tabitha.brown@stromanconnelly.info", title: "Customer Applications Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05"
+>, #<User id: 2, first_name: "Elta", last_name: "Balistreri", email: "jazmin@lebsack.io", title: "Central Assurance Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 3, first_name: "S
+ylvan", last_name: "Hintz", email: "dianna@kilbackmiller.name", title: "Corporate Operations Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 4, first_name: "Johnny", last_name: "H
+agenes", email: "misael@koepportiz.io", title: "District Program Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 5, first_name: "Fredrick", last_name: "Gutmann", email: "darwin@di
+etrich.org", title: "Human Integration Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 6, first_name: "Gerald", last_name: "Christiansen", email: "colin.ryan@gaylord.io", titl
+e: "Direct Response Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 7, first_name: "Joshua", last_name: "Thompson", email: "greta.ledner@nader.name", title: "International Brand
+ Executive", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 8, first_name: "Zora", last_name: "Nader", email: "gustave_braun@oberbrunner.info", title: "Lead Metrics Administrator", created
+_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 9, first_name: "Kelsi", last_name: "Schoen", email: "obie_jenkins@beier.name", title: "Customer Communications Director", created_at: "2016-09-27 17
+:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 10, first_name: "Christopher", last_name: "Swift", email: "arielle@marks.org", title: "International Response Orchestrator", created_at: "2016-09-27 17:16:05", updated
+_at: "2016-09-27 17:16:05">]
+
+-------------------> 4.Get 100 Users
+irb(main):005:0> User.take(100)
+  User Load (0.7ms)  SELECT  "users".* FROM "users" LIMIT 100
+=> [#<User id: 1, first_name: "Manley", last_name: "Aufderhar", email: "tabitha.brown@stromanconnelly.info", title: "Customer Applications Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05"
+>, #<User id: 2, first_name: "Elta", last_name: "Balistreri", email: "jazmin@lebsack.io", title: "Central Assurance Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 3, first_name: "S
+ylvan", last_name: "Hintz", email: "dianna@kilbackmiller.name", title: "Corporate Operations Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 4, first_name: "Johnny", last_name: "H
+agenes", email: "misael@koepportiz.io", title: "District Program Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 5, first_name: "Fredrick", last_name: "Gutmann", email: "darwin@di
+etrich.org", title: "Human Integration Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 6, first_name: "Gerald", last_name: "Christiansen", email: "colin.ryan@gaylord.io", titl
+e: "Direct Response Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 7, first_name: "Joshua", last_name: "Thompson", email: "greta.ledner@nader.name", title: "International Brand
+ Executive", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 8, first_name: "Zora", last_name: "Nader", email: "gustave_braun@oberbrunner.info", title: "Lead Metrics Administrator", created
+_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 9, first_name: "Kelsi", last_name: "Schoen", email: "obie_jenkins@beier.name", title: "Customer Communications Director", created_at: "2016-09-27 17
+:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 10, first_name: "Christopher", last_name: "Swift", email: "arielle@marks.org", title: "International Response Orchestrator", created_at: "2016-09-27 17:16:05", updated
+_at: "2016-09-27 17:16:05">, #<User id: 11, first_name: "Cortney", last_name: "Kuhlman", email: "merlin.harber@stiedemannfriesen.name", title: "Future Infrastructure Director", created_at: "2016-09-27 17:16:05", updated_at:
+ "2016-09-27 17:16:05">, #<User id: 12, first_name: "Garrett", last_name: "Hagenes", email: "dovie.berge@mosciski.com", title: "Investor Research Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:
+05">, #<User id: 13, first_name: "Winfield", last_name: "Mitchell", email: "liliane@kuhn.org", title: "Global Response Representative", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 14, f
+irst_name: "Everardo", last_name: "Schaefer", email: "felipe@hoppe.biz", title: "District Creative Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 15, first_name: "Jesus", last
+_name: "Toy", email: "dannie_carroll@pfeffer.co", title: "Dynamic Program Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 16, first_name: "Brian", last_name: "Kub", email: "pinkie
+@tillmanyundt.org", title: "Direct Factors Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 17, first_name: "Pasquale", last_name: "Hills", email: "ernesto_ondricka@cartwrightmclau
+ghlin.org", title: "Direct Functionality Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 18, first_name: "Ewald", last_name: "Becker", email: "pearl.simonis@romagueraboehm.co",
+title: "National Configuration Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 19, first_name: "Remington", last_name: "Wiza", email: "velda.hudson@turnerreynolds.net", title: "
+Chief Web Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 20, first_name: "Thad", last_name: "Prohaska", email: "rodolfo@altenwerth.net", title: "Principal Interactions Superv
+isor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 21, first_name: "Filiberto", last_name: "Sipes", email: "carmelo@raynor.co", title: "Corporate Usability Liaison", created_at: "2016-0
+9-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 22, first_name: "Breanna", last_name: "Rutherford", email: "kane.bradtke@veumflatley.com", title: "Lead Functionality Specialist", created_at: "2016-09-27 17:16
+:05", updated_at: "2016-09-27 17:16:05">, #<User id: 23, first_name: "Otilia", last_name: "Deckow", email: "darien@haley.io", title: "Dynamic Brand Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17
+:16:05">, #<User id: 24, first_name: "Ariane", last_name: "Green", email: "krystal.rohan@hagenes.io", title: "Product Infrastructure Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User i
+d: 25, first_name: "Malcolm", last_name: "Dickinson", email: "stefan_hoeger@langworth.net", title: "Forward Marketing Analyst", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 26, first_nam
+e: "Jewell", last_name: "Hudson", email: "dakota@flatleymiller.co", title: "Dynamic Brand Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 27, first_name: "Jacinthe", last_name:
+"Waelchi", email: "jacynthe@hettinger.com", title: "Corporate Implementation Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 28, first_name: "Lilliana", last_name: "Swift", email
+: "vada_balistreri@lang.org", title: "National Brand Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 29, first_name: "Fabian", last_name: "Gerlach", email: "madisen.blanda@hane.biz"
+, title: "District Infrastructure Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 30, first_name: "Nyasia", last_name: "Corkery", email: "vernon@rogahn.net", title: "Legacy Acc
+ountability Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 31, first_name: "Vern", last_name: "Rath", email: "lizzie_hermann@pfannerstill.biz", title: "International Optimizat
+ion Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 32, first_name: "Jeanie", last_name: "Farrell", email: "ciara@kulashansen.biz", title: "Global Markets Coordinator", created_at:
+"2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 33, first_name: "Omer", last_name: "Pouros", email: "gia@cummings.biz", title: "Customer Factors Administrator", created_at: "2016-09-27 17:16:05", updat
+ed_at: "2016-09-27 17:16:05">, #<User id: 34, first_name: "Harley", last_name: "Gottlieb", email: "nathanial.stehr@beatty.biz", title: "Global Accountability Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09
+-27 17:16:05">, #<User id: 35, first_name: "Rebeka", last_name: "Murray", email: "agustin_lubowitz@kilbackboyle.com", title: "Senior Accountability Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:
+16:05">, #<User id: 36, first_name: "Maybelle", last_name: "Hintz", email: "maeve.schmeler@littel.info", title: "Lead Quality Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 37
+, first_name: "Zackary", last_name: "Bode", email: "art.runolfon@jerde.info", title: "International Quality Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 38, first_name: "Emm
+et", last_name: "Lowe", email: "wallace@hoppe.org", title: "Direct Quality Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 39, first_name: "Jabari", last_name: "Ankunding", email:
+ "glenna@harvey.net", title: "Central Directives Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 40, first_name: "June", last_name: "Balistreri", email: "hope@mills.co", title: "Inv
+estor Accountability Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 41, first_name: "Darron", last_name: "Johnston", email: "joyce.schultz@grady.name", title: "Forward Market
+ing Designer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 42, first_name: "Noemi", last_name: "Rice", email: "mylene_ziemann@schneider.info", title: "Direct Brand Representative", crea
+ted_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 43, first_name: "Edythe", last_name: "Hintz", email: "cleora@bahringer.biz", title: "Lead Creative Strategist", created_at: "2016-09-27 17:16:05"
+, updated_at: "2016-09-27 17:16:05">, #<User id: 44, first_name: "Jade", last_name: "Herzog", email: "ramiro_becker@medhurstkihn.io", title: "Direct Brand Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09
+-27 17:16:05">, #<User id: 45, first_name: "Marge", last_name: "Hills", email: "felipa_halvorson@moore.name", title: "Lead Quality Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id:
+46, first_name: "Martin", last_name: "Wilderman", email: "ruth.wintheiser@nienow.info", title: "Legacy Group Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 47, first_name: "Ka
+le", last_name: "Pfannerstill", email: "shakira_stroman@hirthe.io", title: "Forward Solutions Engineer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 48, first_name: "Derrick", last_name
+: "Schmidt", email: "gloria@sauer.net", title: "Regional Configuration Designer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 49, first_name: "Gregorio", last_name: "Carroll", email: "g
+riffin@ward.info", title: "Internal Quality Representative", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 50, first_name: "Ola", last_name: "Hirthe", email: "neva.goodwin@kshlerin.com",
+title: "National Marketing Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 51, first_name: "Jasmin", last_name: "Ferry", email: "miracle.oconnell@schultzkuvalis.io", title: "Huma
+n Assurance Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 52, first_name: "Jacquelyn", last_name: "DuBuque", email: "rebeka_simonis@tromp.net", title: "District Accountabilit
+y Developer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 53, first_name: "Kole", last_name: "Towne", email: "jasmin@lemkebartell.org", title: "Human Paradigm Specialist", created_at: "
+2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 54, first_name: "Therese", last_name: "Hintz", email: "sigurd.zulauf@shields.org", title: "Internal Paradigm Supervisor", created_at: "2016-09-27 17:16:05
+", updated_at: "2016-09-27 17:16:05">, #<User id: 55, first_name: "Isidro", last_name: "Hyatt", email: "aaliyah@sauer.name", title: "District Communications Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-
+27 17:16:05">, #<User id: 56, first_name: "Noemi", last_name: "Hilpert", email: "laurel@jast.biz", title: "Investor Metrics Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 57, fi
+rst_name: "Stevie", last_name: "Okuneva", email: "alia.rolfson@eberteffertz.io", title: "Principal Program Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 58, first_name: "Maiya"
+, last_name: "Mraz", email: "alexandra@hartmann.name", title: "Regional Metrics Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 59, first_name: "Fermin", last_name: "Waters", e
+mail: "randy@johnston.co", title: "District Factors Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 60, first_name: "Lulu", last_name: "Feest", email: "grady_wunsch@moen.net",
+title: "Dynamic Identity Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 61, first_name: "Arne", last_name: "Oberbrunner", email: "keyon@nicolas.net", title: "Principal Brandin
+g Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 62, first_name: "Blaze", last_name: "Medhurst", email: "aidan@bradtke.io", title: "Senior Identity Associate", created_at: "20
+16-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 63, first_name: "Anastasia", last_name: "Kertzmann", email: "ora.ward@goodwin.info", title: "Dynamic Configuration Associate", created_at: "2016-09-27 17:16
+:05", updated_at: "2016-09-27 17:16:05">, #<User id: 64, first_name: "Sydnie", last_name: "Sanford", email: "freeda_macgyver@mullerhowe.co", title: "Direct Identity Executive", created_at: "2016-09-27 17:16:05", updated_at:
+ "2016-09-27 17:16:05">, #<User id: 65, first_name: "Kaya", last_name: "Raynor", email: "lola_nikolaus@bergefeil.name", title: "Dynamic Interactions Associate", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:
+16:05">, #<User id: 66, first_name: "Anais", last_name: "Gleason", email: "caria@buckridge.io", title: "Senior Implementation Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 67, f
+irst_name: "Ross", last_name: "Steuber", email: "kamryn_heller@oberbrunner.co", title: "Central Creative Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 68, first_name: "Annabe
+lle", last_name: "Kautzer", email: "hailee_bechtelar@schimmel.biz", title: "Dynamic Functionality Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 69, first_name: "Zoie", last_name
+: "Kling", email: "hobart@wittingfeil.net", title: "Central Functionality Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 70, first_name: "Frankie", last_name: "Kunde", email: "
+warren@gaylordgibson.co", title: "Legacy Factors Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 71, first_name: "Kavon", last_name: "Frami", email: "urban.rath@rodriguez.info
+", title: "District Interactions Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 72, first_name: "Leila", last_name: "Hilll", email: "jamel@waelchihowe.co", title: "Principal
+Response Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 73, first_name: "Nathan", last_name: "Lynch", email: "liliana@bradtke.biz", title: "Dynamic Group Designer", created_at: "20
+16-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 74, first_name: "Virginia", last_name: "Lebsack", email: "zetta@spinka.info", title: "Legacy Security Facilitator", created_at: "2016-09-27 17:16:05", updat
+ed_at: "2016-09-27 17:16:05">, #<User id: 75, first_name: "Edwardo", last_name: "Haag", email: "sean.shields@carter.net", title: "Senior Integration Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17
+:16:05">, #<User id: 76, first_name: "Libbie", last_name: "Wunsch", email: "cecile@fritsch.com", title: "District Communications Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id:
+ 77, first_name: "Harold", last_name: "DuBuque", email: "terry_fisher@collinsdoyle.com", title: "Dynamic Brand Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 78, first_name: "Jonat
+han", last_name: "Schmidt", email: "jeanette.cronin@robertshintz.com", title: "Forward Web Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 79, first_name: "Maeve", last_name: "
+Kassulke", email: "gonzalo@klocko.biz", title: "Customer Web Developer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 80, first_name: "Monique", last_name: "Johns", email: "sid.kuhic@web
+er.org", title: "Human Accounts Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 81, first_name: "Larissa", last_name: "Botsford", email: "leslie@gutkowskischoen.net", title: "D
+irect Metrics Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 82, first_name: "Jaycee", last_name: "Pfannerstill", email: "laney.cronin@bahringer.net", title: "Investor Integra
+tion Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 83, first_name: "Westley", last_name: "Barton", email: "haskell_herman@lynch.io", title: "District Accountability Designer",
+ created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 84, first_name: "Dexter", last_name: "Kreiger", email: "adrien_farrell@gislason.io", title: "Dynamic Web Consultant", created_at: "2016-09-2
+7 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 85, first_name: "Baby", last_name: "Larkin", email: "madilyn@wilderman.info", title: "Human Interactions Specialist", created_at: "2016-09-27 17:16:05", updated_at
+: "2016-09-27 17:16:05">, #<User id: 86, first_name: "Roselyn", last_name: "Kiehn", email: "daisy.berge@waelchi.org", title: "Regional Research Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:0
+5">, #<User id: 87, first_name: "Brook", last_name: "Olson", email: "virginia.hintz@prohaska.net", title: "Customer Usability Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 88, f
+irst_name: "Dale", last_name: "Champlin", email: "adrienne.hand@koelpin.info", title: "Human Assurance Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 89, first_name: "Vaughn", l
+ast_name: "Pagac", email: "lyric.hansen@murphy.info", title: "District Operations Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 90, first_name: "Ava", last_name: "Sawayn", emai
+l: "aaliyah@collins.co", title: "Corporate Web Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 91, first_name: "Helmer", last_name: "Hamill", email: "jenifer.walker@crist.info",
+ title: "Chief Accountability Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 92, first_name: "Wava", last_name: "Pfannerstill", email: "javier_mcclure@runolfon.co", title: "D
+ynamic Creative Engineer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 93, first_name: "Cornelius", last_name: "Johns", email: "sunny_schmidt@dietrich.com", title: "Customer Metrics Tec
+hnician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 94, first_name: "Horace", last_name: "Feil", email: "tracy.senger@hoeger.info", title: "Senior Applications Officer", created_at: "
+2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 95, first_name: "Brisa", last_name: "Reilly", email: "arianna@macgyvermoore.org", title: "Human Metrics Associate", created_at: "2016-09-27 17:16:05", upd
+ated_at: "2016-09-27 17:16:05">, #<User id: 96, first_name: "Arnaldo", last_name: "Hoppe", email: "edward@zieme.io", title: "Dynamic Intranet Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05"
+>, #<User id: 97, first_name: "Devante", last_name: "Goodwin", email: "reilly.romaguera@mcdermott.io", title: "Global Mobility Specialist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 9
+8, first_name: "Brandt", last_name: "Barton", email: "thad@schowalter.io", title: "Product Accounts Consultant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 99, first_name: "Timmy", las
+t_name: "Stiedemann", email: "rodger@fahey.name", title: "Principal Brand Planner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 100, first_name: "Karina", last_name: "Bradtke", email: "
+skye@haag.info", title: "Principal Interactions Coordinator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">]
+
+-------------------> 5.Get 100 Users ordered by lastname
+	irb(main):002:0> User.order(:last_name).take(100)
+  User Load (1.2ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."last_name" ASC LIMIT 100
+=> [#<User id: 39, first_name: "Jabari", last_name: "Ankunding", email: "glenna@harvey.net", title: "Central Directives Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 1, first_name
+: "Manley", last_name: "Aufderhar", email: "tabitha.brown@stromanconnelly.info", title: "Customer Applications Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 170, first_nam
+e: "Malachi", last_name: "Bahringer", email: "teresa@rohan.net", title: "Future Security Architect", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 129, first_name: "Jammie", last_name: "B
+ailey", email: "annie_altenwerth@dachdare.net", title: "District Intranet Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 2, first_name: "Elta", last_name: "Balistreri", email: "
+jazmin@lebsack.io", title: "Central Assurance Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 40, first_name: "June", last_name: "Balistreri", email: "hope@mills.co", title: "Invest
+or Accountability Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 106, first_name: "Danielle", last_name: "Balistreri", email: "mallory.erdman@howell.biz", title: "Customer Re
+sponse Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 83, first_name: "Westley", last_name: "Barton", email: "haskell_herman@lynch.io", title: "District Accountability Designer"
+, created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 98, first_name: "Brandt", last_name: "Barton", email: "thad@schowalter.io", title: "Product Accounts Consultant", created_at: "2016-09-27 1
+7:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 109, first_name: "Harrison", last_name: "Baumbach", email: "jed@kuhicbatz.name", title: "National Response Architect", created_at: "2016-09-27 17:16:06", updated_at:
+"2016-09-27 17:16:06">, #<User id: 18, first_name: "Ewald", last_name: "Becker", email: "pearl.simonis@romagueraboehm.co", title: "National Configuration Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-2
+7 17:16:05">, #<User id: 173, first_name: "Aileen", last_name: "Beer", email: "gennaro_abernathy@flatley.io", title: "Global Division Consultant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<Use
+r id: 181, first_name: "Leann", last_name: "Bergnaum", email: "aaron_oreilly@kuphalkutch.biz", title: "Investor Mobility Analyst", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 37, first_
+name: "Zackary", last_name: "Bode", email: "art.runolfon@jerde.info", title: "International Quality Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 81, first_name: "Larissa", l
+ast_name: "Botsford", email: "leslie@gutkowskischoen.net", title: "Direct Metrics Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 100, first_name: "Karina", last_name: "Bradtke
+", email: "skye@haag.info", title: "Principal Interactions Coordinator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 145, first_name: "Micah", last_name: "Brekke", email: "laila@pollich
+.info", title: "Lead Usability Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 49, first_name: "Gregorio", last_name: "Carroll", email: "griffin@ward.info", title: "Internal Quali
+ty Representative", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 88, first_name: "Dale", last_name: "Champlin", email: "adrienne.hand@koelpin.info", title: "Human Assurance Producer", cr
+eated_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 6, first_name: "Gerald", last_name: "Christiansen", email: "colin.ryan@gaylord.io", title: "Direct Response Assistant", created_at: "2016-09-27
+ 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 30, first_name: "Nyasia", last_name: "Corkery", email: "vernon@rogahn.net", title: "Legacy Accountability Technician", created_at: "2016-09-27 17:16:05", updated_at
+: "2016-09-27 17:16:05">, #<User id: 185, first_name: "Urban", last_name: "Dare", email: "elmo@herzog.io", title: "Lead Accounts Planner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 11
+0, first_name: "Flossie", last_name: "Davis", email: "edmond@koch.org", title: "Internal Implementation Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 112, first_name: "Lloyd",
+last_name: "Davis", email: "alta@ebert.com", title: "Corporate Division Manager", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 116, first_name: "Terrence", last_name: "Davis", email: "re
+mington.reynolds@greenfeldermurazik.co", title: "District Security Orchestrator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 23, first_name: "Otilia", last_name: "Deckow", email: "dari
+en@haley.io", title: "Dynamic Brand Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 25, first_name: "Malcolm", last_name: "Dickinson", email: "stefan_hoeger@langworth.net", ti
+tle: "Forward Marketing Analyst", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 117, first_name: "Casimir", last_name: "Doyle", email: "dean.bergstrom@ruel.org", title: "Customer Response
+ Associate", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 52, first_name: "Jacquelyn", last_name: "DuBuque", email: "rebeka_simonis@tromp.net", title: "District Accountability Developer"
+, created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 77, first_name: "Harold", last_name: "DuBuque", email: "terry_fisher@collinsdoyle.com", title: "Dynamic Brand Agent", created_at: "2016-09-
+27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 169, first_name: "Roma", last_name: "Emmerich", email: "adonis@windlergoyette.co", title: "Corporate Configuration Associate", created_at: "2016-09-27 17:16:06",
+updated_at: "2016-09-27 17:16:06">, #<User id: 148, first_name: "Liliane", last_name: "Erdman", email: "jack@kub.com", title: "Forward Mobility Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06
+">, #<User id: 32, first_name: "Jeanie", last_name: "Farrell", email: "ciara@kulashansen.biz", title: "Global Markets Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 60, first
+_name: "Lulu", last_name: "Feest", email: "grady_wunsch@moen.net", title: "Dynamic Identity Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 186, first_name: "Luciano", last_nam
+e: "Feest", email: "oleta.schulist@haag.co", title: "Forward Web Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 94, first_name: "Horace", last_name: "Feil", email: "tracy.senger@hoeger.info", title: "Senior Applications Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 51, first_name: "Jasmin", last_name: "Ferry", email: "miracle.oconnell@schultzkuvalis.i
+o", title: "Human Assurance Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 178, first_name: "Linnea", last_name: "Ferry", email: "marcel@kub.co", title: "Customer Paradigm Des
+igner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 130, first_name: "Eldred", last_name: "Flatley", email: "magnolia.donnelly@gaylord.org", title: "Future Security Agent", created_at:
+"2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 71, first_name: "Kavon", last_name: "Frami", email: "urban.rath@rodriguez.info", title: "District Interactions Coordinator", created_at: "2016-09-27 17:1
+6:05", updated_at: "2016-09-27 17:16:05">, #<User id: 127, first_name: "Hillary", last_name: "Funk", email: "kiley@luettgen.net", title: "Dynamic Accountability Consultant", created_at: "2016-09-27 17:16:06", updated_at: "2
+016-09-27 17:16:06">, #<User id: 29, first_name: "Fabian", last_name: "Gerlach", email: "madisen.blanda@hane.biz", title: "District Infrastructure Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:1
+6:05">, #<User id: 66, first_name: "Anais", last_name: "Gleason", email: "caria@buckridge.io", title: "Senior Implementation Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 135, f
+irst_name: "Doug", last_name: "Glover", email: "westley@marksgreenholt.io", title: "Investor Program Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 142, first_name: "Ladarius", l
+ast_name: "Glover", email: "maymie.pagac@feestgaylord.name", title: "Human Web Planner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 97, first_name: "Devante", last_name: "Goodwin", ema
+il: "reilly.romaguera@mcdermott.io", title: "Global Mobility Specialist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 34, first_name: "Harley", last_name: "Gottlieb", email: "nathanial.
+stehr@beatty.biz", title: "Global Accountability Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 136, first_name: "Pablo", last_name: "Grady", email: "karolann@bergeconnelly.co",
+title: "Dynamic Division Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 24, first_name: "Ariane", last_name: "Green", email: "krystal.rohan@hagenes.io", title: "Product Infrast
+ructure Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 5, first_name: "Fredrick", last_name: "Gutmann", email: "darwin@dietrich.org", title: "Human Integration Facilitator", cre
+ated_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 167, first_name: "Henderson", last_name: "Gutmann", email: "rozella_bartoletti@langruecker.co", title: "Dynamic Creative Strategist", created_at
+: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 75, first_name: "Edwardo", last_name: "Haag", email: "sean.shields@carter.net", title: "Senior Integration Consultant", created_at: "2016-09-27 17:16:0
+5", updated_at: "2016-09-27 17:16:05">, #<User id: 4, first_name: "Johnny", last_name: "Hagenes", email: "misael@koepportiz.io", title: "District Program Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27
+17:16:05">, #<User id: 12, first_name: "Garrett", last_name: "Hagenes", email: "dovie.berge@mosciski.com", title: "Investor Research Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User
+id: 91, first_name: "Helmer", last_name: "Hamill", email: "jenifer.walker@crist.info", title: "Chief Accountability Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 191, first_
+name: "Vivian", last_name: "Hansen", email: "glenda.kilback@kubkovacek.info", title: "Central Quality Technician", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 143, first_name: "Jeffrey"
+, last_name: "Heidenreich", email: "kennedi.deckow@jonesgaylord.org", title: "Future Program Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 160, first_name: "Golda", last_name: "
+Heidenreich", email: "viva@dickinson.net", title: "District Solutions Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 122, first_name: "Luis", last_name: "Heller", email: "era@hi
+lll.biz", title: "National Quality Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 44, first_name: "Jade", last_name: "Herzog", email: "ramiro_becker@medhurstkihn.io", title: "Dir
+ect Brand Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 72, first_name: "Leila", last_name: "Hilll", email: "jamel@waelchihowe.co", title: "Principal Response Agent", created
+_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 17, first_name: "Pasquale", last_name: "Hills", email: "ernesto_ondricka@cartwrightmclaughlin.org", title: "Direct Functionality Architect", created
+_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 45, first_name: "Marge", last_name: "Hills", email: "felipa_halvorson@moore.name", title: "Lead Quality Officer", created_at: "2016-09-27 17:16:05",
+ updated_at: "2016-09-27 17:16:05">, #<User id: 56, first_name: "Noemi", last_name: "Hilpert", email: "laurel@jast.biz", title: "Investor Metrics Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:0
+5">, #<User id: 3, first_name: "Sylvan", last_name: "Hintz", email: "dianna@kilbackmiller.name", title: "Corporate Operations Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 36, f
+irst_name: "Maybelle", last_name: "Hintz", email: "maeve.schmeler@littel.info", title: "Lead Quality Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 43, first_name: "Edythe", l
+ast_name: "Hintz", email: "cleora@bahringer.biz", title: "Lead Creative Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 54, first_name: "Therese", last_name: "Hintz", email: "s
+igurd.zulauf@shields.org", title: "Internal Paradigm Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 50, first_name: "Ola", last_name: "Hirthe", email: "neva.goodwin@kshlerin.c
+om", title: "National Marketing Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 96, first_name: "Arnaldo", last_name: "Hoppe", email: "edward@zieme.io", title: "Dynamic Intranet
+Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 26, first_name: "Jewell", last_name: "Hudson", email: "dakota@flatleymiller.co", title: "Dynamic Brand Architect", created_at: "
+2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 55, first_name: "Isidro", last_name: "Hyatt", email: "aaliyah@sauer.name", title: "District Communications Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 144, first_name: "Malika", last_name: "Jacobi", email: "madonna.gleichner@terry.com", title: "Product Directives Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-2
+7 17:16:06">, #<User id: 80, first_name: "Monique", last_name: "Johns", email: "sid.kuhic@weber.org", title: "Human Accounts Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 93,
+ first_name: "Cornelius", last_name: "Johns", email: "sunny_schmidt@dietrich.com", title: "Customer Metrics Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 41, first_name: "Dar
+ron", last_name: "Johnston", email: "joyce.schultz@grady.name", title: "Forward Marketing Designer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 79, first_name: "Maeve", last_name: "Kas
+sulke", email: "gonzalo@klocko.biz", title: "Customer Web Developer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 68, first_name: "Annabelle", last_name: "Kautzer", email: "hailee_becht
+elar@schimmel.biz", title: "Dynamic Functionality Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 63, first_name: "Anastasia", last_name: "Kertzmann", email: "ora.ward@goodwin.inf
+o", title: "Dynamic Configuration Associate", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 120, first_name: "Rosalia", last_name: "Kessler", email: "abe_dickens@wilderman.info", title: "
+Global Mobility Developer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 86, first_name: "Roselyn", last_name: "Kiehn", email: "daisy.berge@waelchi.org", title: "Regional Research Techni
+cian", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 101, first_name: "Althea", last_name: "Kiehn", email: "hollie_rowe@anderson.org", title: "Customer Security Agent", created_at: "2016-
+09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 150, first_name: "Camren", last_name: "Kiehn", email: "reanna_pfannerstill@cain.name", title: "Chief Implementation Planner", created_at: "2016-09-27 17:16:06"
+, updated_at: "2016-09-27 17:16:06">, #<User id: 184, first_name: "Lazaro", last_name: "King", email: "athena@howell.info", title: "Product Creative Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:1
+6:06">, #<User id: 69, first_name: "Zoie", last_name: "Kling", email: "hobart@wittingfeil.net", title: "Central Functionality Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 157
+, first_name: "Rowena", last_name: "Kling", email: "marvin.hayes@waltermacejkovic.net", title: "Customer Mobility Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 107, first_name: "T
+ristin", last_name: "Klocko", email: "priscilla.kris@lubowitz.org", title: "Principal Optimization Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 172, first_name: "Dameon", last
+_name: "Klocko", email: "erich.lowe@watsica.net", title: "Human Interactions Designer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 174, first_name: "Aliza", last_name: "Koepp", email:
+"casimir@morar.name", title: "Internal Research Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 115, first_name: "Jameson", last_name: "Kozey", email: "marques@walker.net", title
+: "Regional Division Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 84, first_name: "Dexter", last_name: "Kreiger", email: "adrien_farrell@gislason.io", title: "Dynamic Web Con
+sultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 164, first_name: "Allie", last_name: "Kris", email: "quinton_boyer@oreilly.com", title: "Future Optimization Orchestrator", created
+_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 16, first_name: "Brian", last_name: "Kub", email: "pinkie@tillmanyundt.org", title: "Direct Factors Liaison", created_at: "2016-09-27 17:16:05", upd
+ated_at: "2016-09-27 17:16:05">, #<User id: 151, first_name: "Wellington", last_name: "Kuhic", email: "cristopher@treutel.net", title: "Corporate Branding Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-2
+7 17:16:06">, #<User id: 11, first_name: "Cortney", last_name: "Kuhlman", email: "merlin.harber@stiedemannfriesen.name", title: "Future Infrastructure Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17
+:16:05">, #<User id: 70, first_name: "Frankie", last_name: "Kunde", email: "warren@gaylordgibson.co", title: "Legacy Factors Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 85
+, first_name: "Baby", last_name: "Larkin", email: "madilyn@wilderman.info", title: "Human Interactions Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 141, first_name: "Rickey"
+, last_name: "Larkin", email: "austyn@schinner.org", title: "International Directives Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 152, first_name: "Astrid", last_name: "Larkin
+", email: "susanna.bruen@pagac.co", title: "Future Solutions Assistant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 171, first_name: "Hilda", last_name: "Leannon", email: "cedrick@medh
+urst.info", title: "Central Mobility Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">]
+
+-------------------> 6.Get 200 Users ordered by email
+	irb(main):003:0> User.order(:email).take(200)
+  User Load (1.6ms)  SELECT  "users".* FROM "users"  ORDER BY "users"."email" ASC LIMIT 200
+=> [#<User id: 90, first_name: "Ava", last_name: "Sawayn", email: "aaliyah@collins.co", title: "Corporate Web Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 55, first_name: "Is
+idro", last_name: "Hyatt", email: "aaliyah@sauer.name", title: "District Communications Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 181, first_name: "Leann", last_name: "Bergn
+aum", email: "aaron_oreilly@kuphalkutch.biz", title: "Investor Mobility Analyst", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 120, first_name: "Rosalia", last_name: "Kessler", email: "a
+be_dickens@wilderman.info", title: "Global Mobility Developer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 183, first_name: "Serena", last_name: "Prohaska", email: "abigayle_mclaughlin
+@heller.name", title: "Future Functionality Facilitator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 169, first_name: "Roma", last_name: "Emmerich", email: "adonis@windlergoyette.co",
+title: "Corporate Configuration Associate", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 84, first_name: "Dexter", last_name: "Kreiger", email: "adrien_farrell@gislason.io", title: "Dyna
+mic Web Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 88, first_name: "Dale", last_name: "Champlin", email: "adrienne.hand@koelpin.info", title: "Human Assurance Producer", c
+reated_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 35, first_name: "Rebeka", last_name: "Murray", email: "agustin_lubowitz@kilbackboyle.com", title: "Senior Accountability Supervisor", created_
+at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 62, first_name: "Blaze", last_name: "Medhurst", email: "aidan@bradtke.io", title: "Senior Identity Associate", created_at: "2016-09-27 17:16:05", upd
+ated_at: "2016-09-27 17:16:05">, #<User id: 58, first_name: "Maiya", last_name: "Mraz", email: "alexandra@hartmann.name", title: "Regional Metrics Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:1
+6:05">, #<User id: 176, first_name: "Trenton", last_name: "Rau", email: "alf@wehnerbotsford.biz", title: "Chief Metrics Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 57, first_n
+ame: "Stevie", last_name: "Okuneva", email: "alia.rolfson@eberteffertz.io", title: "Principal Program Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 112, first_name: "Lloyd", la
+st_name: "Davis", email: "alta@ebert.com", title: "Corporate Division Manager", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 133, first_name: "Noemi", last_name: "Zboncak", email: "angel
+ine_lockman@lakin.co", title: "Regional Creative Facilitator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 129, first_name: "Jammie", last_name: "Bailey", email: "annie_altenwerth@dachd
+are.net", title: "District Intranet Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 190, first_name: "Jana", last_name: "Schimmel", email: "antonina@morarprohaska.biz", title: "I
+nternal Marketing Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 95, first_name: "Brisa", last_name: "Reilly", email: "arianna@macgyvermoore.org", title: "Human Metrics Associate
+", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 10, first_name: "Christopher", last_name: "Swift", email: "arielle@marks.org", title: "International Response Orchestrator", created_at: "
+2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 192, first_name: "Antonia", last_name: "Rippin", email: "armand@gerhold.name", title: "Central Creative Supervisor", created_at: "2016-09-27 17:16:06", up
+dated_at: "2016-09-27 17:16:06">, #<User id: 182, first_name: "Mariano", last_name: "Weber", email: "arno@donnelly.info", title: "Corporate Assurance Orchestrator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27
+ 17:16:06">, #<User id: 37, first_name: "Zackary", last_name: "Bode", email: "art.runolfon@jerde.info", title: "International Quality Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<Use
+r id: 184, first_name: "Lazaro", last_name: "King", email: "athena@howell.info", title: "Product Creative Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 141, first_name: "Rickey
+", last_name: "Larkin", email: "austyn@schinner.org", title: "International Directives Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 66, first_name: "Anais", last_name: "Gleason
+", email: "caria@buckridge.io", title: "Senior Implementation Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 138, first_name: "Verlie", last_name: "Little", email: "carleton@kuva
+lis.biz", title: "Future Configuration Technician", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 21, first_name: "Filiberto", last_name: "Sipes", email: "carmelo@raynor.co", title: "Corp
+orate Usability Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 174, first_name: "Aliza", last_name: "Koepp", email: "casimir@morar.name", title: "Internal Research Engineer", cre
+ated_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 76, first_name: "Libbie", last_name: "Wunsch", email: "cecile@fritsch.com", title: "District Communications Specialist", created_at: "2016-09-27
+ 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 171, first_name: "Hilda", last_name: "Leannon", email: "cedrick@medhurst.info", title: "Central Mobility Producer", created_at: "2016-09-27 17:16:06", updated_at: "
+2016-09-27 17:16:06">, #<User id: 199, first_name: "Russel", last_name: "Romaguera", email: "celestine_botsford@crona.biz", title: "Corporate Intranet Architect", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 1
+7:16:06">, #<User id: 32, first_name: "Jeanie", last_name: "Farrell", email: "ciara@kulashansen.biz", title: "Global Markets Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 43
+, first_name: "Edythe", last_name: "Hintz", email: "cleora@bahringer.biz", title: "Lead Creative Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 140, first_name: "Sandrine", la
+st_name: "Satterfield", email: "cletus_predovic@rutherford.org", title: "Senior Marketing Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 6, first_name: "Gerald", last_name: "Chri
+stiansen", email: "colin.ryan@gaylord.io", title: "Direct Response Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 179, first_name: "Mckayla", last_name: "Stehr", email: "collee
+n@brownwyman.info", title: "Customer Infrastructure Analyst", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 108, first_name: "Macy", last_name: "Pagac", email: "colt@littleokon.name", tit
+le: "Lead Configuration Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 111, first_name: "Talon", last_name: "Sawayn", email: "cristal.renner@ko.biz", title: "Legacy Quality Strateg
+ist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 151, first_name: "Wellington", last_name: "Kuhic", email: "cristopher@treutel.net", title: "Corporate Branding Producer", created_at: "
+2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 194, first_name: "Connie", last_name: "Rowe", email: "cruz@daniel.info", title: "Investor Creative Administrator", created_at: "2016-09-27 17:16:06", upda
+ted_at: "2016-09-27 17:16:06">, #<User id: 86, first_name: "Roselyn", last_name: "Kiehn", email: "daisy.berge@waelchi.org", title: "Regional Research Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 1
+7:16:05">, #<User id: 26, first_name: "Jewell", last_name: "Hudson", email: "dakota@flatleymiller.co", title: "Dynamic Brand Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 15,
+first_name: "Jesus", last_name: "Toy", email: "dannie_carroll@pfeffer.co", title: "Dynamic Program Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 113, first_name: "Linwood", last
+_name: "Monahan", email: "daren_nitzsche@bruen.biz", title: "Dynamic Operations Facilitator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 23, first_name: "Otilia", last_name: "Deckow",
+email: "darien@haley.io", title: "Dynamic Brand Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 131, first_name: "Noemie", last_name: "Muller", email: "darius.prosacco@boyleglover.com", title: "Corporate Program Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 5, first_name: "Fredrick", last_name: "Gutmann", email: "darwin@dietrich.org", title: "Human
+Integration Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 117, first_name: "Casimir", last_name: "Doyle", email: "dean.bergstrom@ruel.org", title: "Customer Response Associa
+te", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 163, first_name: "Brandt", last_name: "Stark", email: "dejah.kemmer@emmerich.org", title: "Investor Communications Manager", created_at:
+ "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 155, first_name: "Winifred", last_name: "Spencer", email: "derrick@jerdeko.biz", title: "Direct Accounts Administrator", created_at: "2016-09-27 17:16:0
+6", updated_at: "2016-09-27 17:16:06">, #<User id: 3, first_name: "Sylvan", last_name: "Hintz", email: "dianna@kilbackmiller.name", title: "Corporate Operations Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016
+-09-27 17:16:05">, #<User id: 12, first_name: "Garrett", last_name: "Hagenes", email: "dovie.berge@mosciski.com", title: "Investor Research Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">,
+#<User id: 110, first_name: "Flossie", last_name: "Davis", email: "edmond@koch.org", title: "Internal Implementation Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 96, first_nam
+e: "Arnaldo", last_name: "Hoppe", email: "edward@zieme.io", title: "Dynamic Intranet Strategist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 185, first_name: "Urban", last_name: "Dare"
+, email: "elmo@herzog.io", title: "Lead Accounts Planner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 122, first_name: "Luis", last_name: "Heller", email: "era@hilll.biz", title: "Nati
+onal Quality Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 172, first_name: "Dameon", last_name: "Klocko", email: "erich.lowe@watsica.net", title: "Human Interactions Designer",
+ created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 17, first_name: "Pasquale", last_name: "Hills", email: "ernesto_ondricka@cartwrightmclaughlin.org", title: "Direct Functionality Architect",
+ created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 45, first_name: "Marge", last_name: "Hills", email: "felipa_halvorson@moore.name", title: "Lead Quality Officer", created_at: "2016-09-27 17
+:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 14, first_name: "Everardo", last_name: "Schaefer", email: "felipe@hoppe.biz", title: "District Creative Technician", created_at: "2016-09-27 17:16:05", updated_at: "20
+16-09-27 17:16:05">, #<User id: 154, first_name: "Stone", last_name: "Yost", email: "forest_schowalter@monahan.name", title: "Direct Factors Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">,
+ #<User id: 64, first_name: "Sydnie", last_name: "Sanford", email: "freeda_macgyver@mullerhowe.co", title: "Direct Identity Executive", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 156,
+first_name: "Carlie", last_name: "Sporer", email: "garry@gradykemmer.name", title: "International Factors Designer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 195, first_name: "Henrie
+tte", last_name: "Von", email: "gay@windler.name", title: "Future Response Director", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 173, first_name: "Aileen", last_name: "Beer", email: "g
+ennaro_abernathy@flatley.io", title: "Global Division Consultant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 153, first_name: "D'angelo", last_name: "Roberts", email: "gerald.wolf@col
+lier.com", title: "Dynamic Usability Strategist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 33, first_name: "Omer", last_name: "Pouros", email: "gia@cummings.biz", title: "Customer Fa
+ctors Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 161, first_name: "Junius", last_name: "Parisian", email: "gladyce.sanford@casperroberts.io", title: "District Operation
+s Assistant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 191, first_name: "Vivian", last_name: "Hansen", email: "glenda.kilback@kubkovacek.info", title: "Central Quality Technician", c
+reated_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 198, first_name: "Jennifer", last_name: "Yost", email: "glenna@connelly.org", title: "Central Infrastructure Consultant", created_at: "2016-09
+-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 39, first_name: "Jabari", last_name: "Ankunding", email: "glenna@harvey.net", title: "Central Directives Agent", created_at: "2016-09-27 17:16:05", updated_at: "
+2016-09-27 17:16:05">, #<User id: 48, first_name: "Derrick", last_name: "Schmidt", email: "gloria@sauer.net", title: "Regional Configuration Designer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">,
+#<User id: 79, first_name: "Maeve", last_name: "Kassulke", email: "gonzalo@klocko.biz", title: "Customer Web Developer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 60, first_name: "Lul
+u", last_name: "Feest", email: "grady_wunsch@moen.net", title: "Dynamic Identity Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 7, first_name: "Joshua", last_name: "Thompson",
+ email: "greta.ledner@nader.name", title: "International Brand Executive", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 49, first_name: "Gregorio", last_name: "Carroll", email: "griffin@
+ward.info", title: "Internal Quality Representative", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 8, first_name: "Zora", last_name: "Nader", email: "gustave_braun@oberbrunner.info", tit
+le: "Lead Metrics Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 68, first_name: "Annabelle", last_name: "Kautzer", email: "hailee_bechtelar@schimmel.biz", title: "Dynamic
+Functionality Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 83, first_name: "Westley", last_name: "Barton", email: "haskell_herman@lynch.io", title: "District Accountability Des
+igner", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 200, first_name: "Donnell", last_name: "Toy", email: "henderson@jones.name", title: "Internal Response Officer", created_at: "2016-09
+-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 69, first_name: "Zoie", last_name: "Kling", email: "hobart@wittingfeil.net", title: "Central Functionality Architect", created_at: "2016-09-27 17:16:05", updated
+_at: "2016-09-27 17:16:05">, #<User id: 101, first_name: "Althea", last_name: "Kiehn", email: "hollie_rowe@anderson.org", title: "Customer Security Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06
+">, #<User id: 40, first_name: "June", last_name: "Balistreri", email: "hope@mills.co", title: "Investor Accountability Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 165, fi
+rst_name: "Junior", last_name: "Walsh", email: "horacio@walker.co", title: "Legacy Accountability Coordinator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 158, first_name: "Micheal", l
+ast_name: "Wintheiser", email: "humberto@kris.net", title: "Senior Optimization Designer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 148, first_name: "Liliane", last_name: "Erdman", e
+mail: "jack@kub.com", title: "Forward Mobility Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 27, first_name: "Jacinthe", last_name: "Waelchi", email: "jacynthe@hettinger.com",
+ title: "Corporate Implementation Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 72, first_name: "Leila", last_name: "Hilll", email: "jamel@waelchihowe.co", title: "Principal Re
+sponse Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 53, first_name: "Kole", last_name: "Towne", email: "jasmin@lemkebartell.org", title: "Human Paradigm Specialist", created_at:
+"2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 105, first_name: "Cathy", last_name: "Schmitt", email: "jasper.connelly@stark.biz", title: "Global Accounts Officer", created_at: "2016-09-27 17:16:06",
+updated_at: "2016-09-27 17:16:06">, #<User id: 92, first_name: "Wava", last_name: "Pfannerstill", email: "javier_mcclure@runolfon.co", title: "Dynamic Creative Engineer", created_at: "2016-09-27 17:16:05", updated_at: "2016
+-09-27 17:16:05">, #<User id: 2, first_name: "Elta", last_name: "Balistreri", email: "jazmin@lebsack.io", title: "Central Assurance Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 78, first_name: "Jonathan", last_name: "Schmidt", email: "jeanette.cronin@robertshintz.com", title: "Forward Web Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 109, first_name:
+ "Harrison", last_name: "Baumbach", email: "jed@kuhicbatz.name", title: "National Response Architect", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 91, first_name: "Helmer", last_name: "
+Hamill", email: "jenifer.walker@crist.info", title: "Chief Accountability Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 180, first_name: "Claire", last_name: "Pagac", email:
+ "johnpaul@zemlak.name", title: "Dynamic Applications Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 126, first_name: "Viviane", last_name: "Stehr", email: "jordon@damore.net",
+title: "Human Markets Specialist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 41, first_name: "Darron", last_name: "Johnston", email: "joyce.schultz@grady.name", title: "Forward Market
+ing Designer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 67, first_name: "Ross", last_name: "Steuber", email: "kamryn_heller@oberbrunner.co", title: "Central Creative Strategist", cre
+ated_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 22, first_name: "Breanna", last_name: "Rutherford", email: "kane.bradtke@veumflatley.com", title: "Lead Functionality Specialist", created_at: "
+2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 197, first_name: "Jayson", last_name: "Pollich", email: "karine@larson.com", title: "Regional Implementation Specialist", created_at: "2016-09-27 17:16:06
+", updated_at: "2016-09-27 17:16:06">, #<User id: 136, first_name: "Pablo", last_name: "Grady", email: "karolann@bergeconnelly.co", title: "Dynamic Division Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-0
+9-27 17:16:06">, #<User id: 118, first_name: "Roselyn", last_name: "Runolfsdottir", email: "kaylah.koelpin@turner.co", title: "Senior Identity Designer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">
+, #<User id: 143, first_name: "Jeffrey", last_name: "Heidenreich", email: "kennedi.deckow@jonesgaylord.org", title: "Future Program Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id:
+ 61, first_name: "Arne", last_name: "Oberbrunner", email: "keyon@nicolas.net", title: "Principal Branding Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 127, first_name: "Hill
+ary", last_name: "Funk", email: "kiley@luettgen.net", title: "Dynamic Accountability Consultant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 123, first_name: "Monique", last_name: "Mos
+ciski", email: "kristina_braun@baumbach.info", title: "Direct Creative Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 24, first_name: "Ariane", last_name: "Green", email: "krysta
+l.rohan@hagenes.io", title: "Product Infrastructure Producer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 145, first_name: "Micah", last_name: "Brekke", email: "laila@pollich.info", ti
+tle: "Lead Usability Officer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 82, first_name: "Jaycee", last_name: "Pfannerstill", email: "laney.cronin@bahringer.net", title: "Investor Int
+egration Assistant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 56, first_name: "Noemi", last_name: "Hilpert", email: "laurel@jast.biz", title: "Investor Metrics Director", created_at:
+ "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 134, first_name: "Giovanni", last_name: "Williamson", email: "lavina@lindgren.net", title: "Chief Web Architect", created_at: "2016-09-27 17:16:06", upd
+ated_at: "2016-09-27 17:16:06">, #<User id: 81, first_name: "Larissa", last_name: "Botsford", email: "leslie@gutkowskischoen.net", title: "Direct Metrics Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-
+27 17:16:05">, #<User id: 73, first_name: "Nathan", last_name: "Lynch", email: "liliana@bradtke.biz", title: "Dynamic Group Designer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 13, fi
+rst_name: "Winfield", last_name: "Mitchell", email: "liliane@kuhn.org", title: "Global Response Representative", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 31, first_name: "Vern", last
+_name: "Rath", email: "lizzie_hermann@pfannerstill.biz", title: "International Optimization Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 65, first_name: "Kaya", last_name: "Rayno
+r", email: "lola_nikolaus@bergefeil.name", title: "Dynamic Interactions Associate", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 132, first_name: "Abraham", last_name: "Willms", email: "
+loren.yost@runte.co", title: "Forward Response Specialist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 166, first_name: "Lavon", last_name: "Satterfield", email: "lucienne_gislason@kem
+mer.info", title: "Future Directives Supervisor", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 175, first_name: "Walton", last_name: "Von", email: "lucious@streich.co", title: "Internati
+onal Configuration Facilitator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 89, first_name: "Vaughn", last_name: "Pagac", email: "lyric.hansen@murphy.info", title: "District Operations
+ Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 85, first_name: "Baby", last_name: "Larkin", email: "madilyn@wilderman.info", title: "Human Interactions Specialist", created_at:
+ "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 29, first_name: "Fabian", last_name: "Gerlach", email: "madisen.blanda@hane.biz", title: "District Infrastructure Consultant", created_at: "2016-09-27 1
+7:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 144, first_name: "Malika", last_name: "Jacobi", email: "madonna.gleichner@terry.com", title: "Product Directives Agent", created_at: "2016-09-27 17:16:06", updated_at
+: "2016-09-27 17:16:06">, #<User id: 36, first_name: "Maybelle", last_name: "Hintz", email: "maeve.schmeler@littel.info", title: "Lead Quality Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05
+">, #<User id: 130, first_name: "Eldred", last_name: "Flatley", email: "magnolia.donnelly@gaylord.org", title: "Future Security Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 106,
+first_name: "Danielle", last_name: "Balistreri", email: "mallory.erdman@howell.biz", title: "Customer Response Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 178, first_name: "L
+innea", last_name: "Ferry", email: "marcel@kub.co", title: "Customer Paradigm Designer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 115, first_name: "Jameson", last_name: "Kozey", emai
+l: "marques@walker.net", title: "Regional Division Executive", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 149, first_name: "Araceli", last_name: "Parker", email: "marshall_king@kundehe
+athcote.org", title: "Internal Security Associate", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 157, first_name: "Rowena", last_name: "Kling", email: "marvin.hayes@waltermacejkovic.net"
+, title: "Customer Mobility Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 187, first_name: "Emmanuelle", last_name: "Veum", email: "matilde.willms@connmitchell.io", title: "Dynami
+c Mobility Engineer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 142, first_name: "Ladarius", last_name: "Glover", email: "maymie.pagac@feestgaylord.name", title: "Human Web Planner",
+created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 103, first_name: "Dillan", last_name: "Steuber", email: "mckayla_keeling@hamill.name", title: "Principal Communications Technician", created_
+at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 137, first_name: "Hans", last_name: "Zieme", email: "meggie@kulaanford.com", title: "Corporate Response Developer", created_at: "2016-09-27 17:16:06"
+, updated_at: "2016-09-27 17:16:06">, #<User id: 102, first_name: "Gretchen", last_name: "Pagac", email: "meggie@von.name", title: "Senior Creative Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06
+">, #<User id: 124, first_name: "Anabel", last_name: "Lebsack", email: "mellie@torp.io", title: "Chief Security Supervisor", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 11, first_name:
+"Cortney", last_name: "Kuhlman", email: "merlin.harber@stiedemannfriesen.name", title: "Future Infrastructure Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 51, first_name: "Jas
+min", last_name: "Ferry", email: "miracle.oconnell@schultzkuvalis.io", title: "Human Assurance Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 4, first_name: "Johnny", last_name: "Hagenes", email: "misael@koepportiz.io", title: "District Program Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 42, first_name: "Noemi", last_name: "Rice", email: "mylene_zi
+emann@schneider.info", title: "Direct Brand Representative", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 34, first_name: "Harley", last_name: "Gottlieb", email: "nathanial.stehr@beatty.
+biz", title: "Global Accountability Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 50, first_name: "Ola", last_name: "Hirthe", email: "neva.goodwin@kshlerin.com", title: "Nationa
+l Marketing Director", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 125, first_name: "Roslyn", last_name: "Schimmel", email: "nils.harris@marquardt.net", title: "Central Group Administra
+tor", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 9, first_name: "Kelsi", last_name: "Schoen", email: "obie_jenkins@beier.name", title: "Customer Communications Director", created_at: "
+2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 186, first_name: "Luciano", last_name: "Feest", email: "oleta.schulist@haag.co", title: "Forward Web Executive", created_at: "2016-09-27 17:16:06", update
+d_at: "2016-09-27 17:16:06">, #<User id: 63, first_name: "Anastasia", last_name: "Kertzmann", email: "ora.ward@goodwin.info", title: "Dynamic Configuration Associate", created_at: "2016-09-27 17:16:05", updated_at: "2016-09
+-27 17:16:05">, #<User id: 18, first_name: "Ewald", last_name: "Becker", email: "pearl.simonis@romagueraboehm.co", title: "National Configuration Architect", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:
+05">, #<User id: 16, first_name: "Brian", last_name: "Kub", email: "pinkie@tillmanyundt.org", title: "Direct Factors Liaison", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 162, first_nam
+e: "Mallie", last_name: "Robel", email: "presley@bahringerpredovic.io", title: "Human Metrics Agent", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 107, first_name: "Tristin", last_name:
+"Klocko", email: "priscilla.kris@lubowitz.org", title: "Principal Optimization Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 164, first_name: "Allie", last_name: "Kris", email:
+ "quinton_boyer@oreilly.com", title: "Future Optimization Orchestrator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 44, first_name: "Jade", last_name: "Herzog", email: "ramiro_becker@m
+edhurstkihn.io", title: "Direct Brand Consultant", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 59, first_name: "Fermin", last_name: "Waters", email: "randy@johnston.co", title: "Distric
+t Factors Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 159, first_name: "Keon", last_name: "Reinger", email: "rasheed.price@langoshrunolfsdottir.org", title: "Product Market
+s Facilitator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 150, first_name: "Camren", last_name: "Kiehn", email: "reanna_pfannerstill@cain.name", title: "Chief Implementation Planner",
+ created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 52, first_name: "Jacquelyn", last_name: "DuBuque", email: "rebeka_simonis@tromp.net", title: "District Accountability Developer", created_at
+: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 168, first_name: "Rosemarie", last_name: "Mann", email: "rebekah@tillmanschmidt.com", title: "Product Markets Executive", created_at: "2016-09-27 17:16
+:06", updated_at: "2016-09-27 17:16:06">, #<User id: 97, first_name: "Devante", last_name: "Goodwin", email: "reilly.romaguera@mcdermott.io", title: "Global Mobility Specialist", created_at: "2016-09-27 17:16:06", updated_a
+t: "2016-09-27 17:16:06">, #<User id: 116, first_name: "Terrence", last_name: "Davis", email: "remington.reynolds@greenfeldermurazik.co", title: "District Security Orchestrator", created_at: "2016-09-27 17:16:06", updated_a
+t: "2016-09-27 17:16:06">, #<User id: 99, first_name: "Timmy", last_name: "Stiedemann", email: "rodger@fahey.name", title: "Principal Brand Planner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<
+User id: 20, first_name: "Thad", last_name: "Prohaska", email: "rodolfo@altenwerth.net", title: "Principal Interactions Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 147, fir
+st_name: "Tiffany", last_name: "Rodriguez", email: "rodrigo.wilkinson@emard.info", title: "Central Metrics Developer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 139, first_name: "Ress
+ie", last_name: "Zulauf", email: "rosendo@schaden.co", title: "Customer Interactions Orchestrator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 167, first_name: "Henderson", last_name:
+"Gutmann", email: "rozella_bartoletti@langruecker.co", title: "Dynamic Creative Strategist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 46, first_name: "Martin", last_name: "Wilderman"
+, email: "ruth.wintheiser@nienow.info", title: "Legacy Group Specialist", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 146, first_name: "Angel", last_name: "Waters", email: "salma_dooley
+@cartwrightlittle.name", title: "Forward Group Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 119, first_name: "Verner", last_name: "Wunsch", email: "samir@jakubowski.co", title
+: "International Solutions Technician", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 188, first_name: "Terence", last_name: "Reynolds", email: "samir@littelstehr.org", title: "National I
+mplementation Developer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 75, first_name: "Edwardo", last_name: "Haag", email: "sean.shields@carter.net", title: "Senior Integration Consulta
+nt", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 47, first_name: "Kale", last_name: "Pfannerstill", email: "shakira_stroman@hirthe.io", title: "Forward Solutions Engineer", created_at:
+"2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 80, first_name: "Monique", last_name: "Johns", email: "sid.kuhic@weber.org", title: "Human Accounts Strategist", created_at: "2016-09-27 17:16:05", updat
+ed_at: "2016-09-27 17:16:05">, #<User id: 54, first_name: "Therese", last_name: "Hintz", email: "sigurd.zulauf@shields.org", title: "Internal Paradigm Supervisor", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27
+17:16:05">, #<User id: 100, first_name: "Karina", last_name: "Bradtke", email: "skye@haag.info", title: "Principal Interactions Coordinator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id:
+ 25, first_name: "Malcolm", last_name: "Dickinson", email: "stefan_hoeger@langworth.net", title: "Forward Marketing Analyst", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 104, first_name
+: "Trey", last_name: "Stroman", email: "stephon@effertz.org", title: "Central Program Specialist", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 93, first_name: "Cornelius", last_name: "J
+ohns", email: "sunny_schmidt@dietrich.com", title: "Customer Metrics Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 152, first_name: "Astrid", last_name: "Larkin", email: "sus
+anna.bruen@pagac.co", title: "Future Solutions Assistant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 1, first_name: "Manley", last_name: "Aufderhar", email: "tabitha.brown@stromanconn
+elly.info", title: "Customer Applications Administrator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 128, first_name: "Casimir", last_name: "Medhurst", email: "teie_schulist@yundt.io",
+ title: "Dynamic Optimization Developer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 170, first_name: "Malachi", last_name: "Bahringer", email: "teresa@rohan.net", title: "Future Secur
+ity Architect", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 77, first_name: "Harold", last_name: "DuBuque", email: "terry_fisher@collinsdoyle.com", title: "Dynamic Brand Agent", created
+_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 98, first_name: "Brandt", last_name: "Barton", email: "thad@schowalter.io", title: "Product Accounts Consultant", created_at: "2016-09-27 17:16:06",
+ updated_at: "2016-09-27 17:16:06">, #<User id: 94, first_name: "Horace", last_name: "Feil", email: "tracy.senger@hoeger.info", title: "Senior Applications Officer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-2
+7 17:16:05">, #<User id: 193, first_name: "Karli", last_name: "Wehner", email: "trycia_pouros@labadiekovacek.com", title: "Dynamic Marketing Director", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">,
+#<User id: 177, first_name: "Gaetano", last_name: "Pagac", email: "tyra@oconnellmann.org", title: "Investor Implementation Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 71, first_name: "Kavon", last_name: "Frami", email: "urban.rath@rodriguez.info", title: "District Interactions Coordinator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 28, first_name: "Lillia
+na", last_name: "Swift", email: "vada_balistreri@lang.org", title: "National Brand Agent", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 114, first_name: "Belle", last_name: "Schroeder",
+email: "vaughn@durgan.name", title: "Forward Markets Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 19, first_name: "Remington", last_name: "Wiza", email: "velda.hudson@turnerrey
+nolds.net", title: "Chief Web Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 30, first_name: "Nyasia", last_name: "Corkery", email: "vernon@rogahn.net", title: "Legacy Accoun
+tability Technician", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 121, first_name: "Vladimir", last_name: "Nader", email: "vida@schustermaggio.io", title: "Dynamic Interactions Administ
+rator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 189, first_name: "Rey", last_name: "Rempel", email: "vidal_schneider@marks.name", title: "District Web Officer", created_at: "2016-09
+-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 87, first_name: "Brook", last_name: "Olson", email: "virginia.hintz@prohaska.net", title: "Customer Usability Officer", created_at: "2016-09-27 17:16:05", update
+d_at: "2016-09-27 17:16:05">, #<User id: 160, first_name: "Golda", last_name: "Heidenreich", email: "viva@dickinson.net", title: "District Solutions Producer", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:1
+6:06">, #<User id: 38, first_name: "Emmet", last_name: "Lowe", email: "wallace@hoppe.org", title: "Direct Quality Manager", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 70, first_name: "
+Frankie", last_name: "Kunde", email: "warren@gaylordgibson.co", title: "Legacy Factors Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 196, first_name: "Alyson", last_name: "M
+osciski", email: "werner@gorczany.name", title: "National Research Consultant", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 135, first_name: "Doug", last_name: "Glover", email: "westley
+@marksgreenholt.io", title: "Investor Program Liaison", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 74, first_name: "Virginia", last_name: "Lebsack", email: "zetta@spinka.info", title:
+"Legacy Security Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">]
+
+-------------------> 7.Remove users that are using a yahoo email.
+	irb(main):037:0> user = User.where{email.like("%@yahoo.com%")}
+  User Load (0.3ms)  SELECT "users".* FROM "users" WHERE "users"."email" LIKE '%@yahoo.com%'
+=> #<ActiveRecord::Relation []>	
+
+-------------------> 8.Remove users that start with the letter D in their last name, from your users list.
+
+	irb(main):051:0> user = User.where{last_name.like("D%")}
+  User Load (0.4ms)  SELECT "users".* FROM "users" WHERE "users"."last_name" LIKE 'D%'
+=> #<ActiveRecord::Relation [#<User id: 23, first_name: "Otilia", last_name: "Deckow", email: "darien@haley.io
+", title: "Dynamic Brand Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">,
+#<User id: 25, first_name: "Malcolm", last_name: "Dickinson", email: "stefan_hoeger@langworth.net", title: "Fo
+rward Marketing Analyst", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 52
+, first_name: "Jacquelyn", last_name: "DuBuque", email: "rebeka_simonis@tromp.net", title: "District Accountab
+ility Developer", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 77, first_
+name: "Harold", last_name: "DuBuque", email: "terry_fisher@collinsdoyle.com", title: "Dynamic Brand Agent", cr
+eated_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 110, first_name: "Flossie", la
+st_name: "Davis", email: "edmond@koch.org", title: "Internal Implementation Engineer", created_at: "2016-09-27
+ 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 112, first_name: "Lloyd", last_name: "Davis", email
+: "alta@ebert.com", title: "Corporate Division Manager", created_at: "2016-09-27 17:16:06", updated_at: "2016-
+09-27 17:16:06">, #<User id: 116, first_name: "Terrence", last_name: "Davis", email: "remington.reynolds@green
+feldermurazik.co", title: "District Security Orchestrator", created_at: "2016-09-27 17:16:06", updated_at: "20
+16-09-27 17:16:06">, #<User id: 117, first_name: "Casimir", last_name: "Doyle", email: "dean.bergstrom@ruel.or
+g", title: "Customer Response Associate", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06"
+>, #<User id: 185, first_name: "Urban", last_name: "Dare", email: "elmo@herzog.io", title: "Lead Accounts Plan
+ner", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">]>
+irb(main):052:0> user.destroy_all
+   (0.1ms)  begin transaction
+  SQL (0.3ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 23]]
+   (5.2ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 25]]
+   (6.4ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 52]]
+   (6.6ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 77]]
+   (5.2ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 110]]
+   (11.0ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.2ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 112]]
+   (5.3ms)  commit transaction  (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 116]]
+   (9.4ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 117]]
+   (5.2ms)  commit transaction
+   (0.0ms)  begin transaction
+  SQL (0.1ms)  DELETE FROM "users" WHERE "users"."id" = ?  [["id", 185]]
+   (6.9ms)  commit transaction
+=> [#<User id: 23, first_name: "Otilia", last_name: "Deckow", email: "darien@haley.io", title: "Dynamic Brand
+Facilitator", created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 25, first_name
+: "Malcolm", last_name: "Dickinson", email: "stefan_hoeger@langworth.net", title: "Forward Marketing Analyst",
+ created_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 52, first_name: "Jacquelyn"
+, last_name: "DuBuque", email: "rebeka_simonis@tromp.net", title: "District Accountability Developer", created
+_at: "2016-09-27 17:16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 77, first_name: "Harold", last_name
+: "DuBuque", email: "terry_fisher@collinsdoyle.com", title: "Dynamic Brand Agent", created_at: "2016-09-27 17:
+16:05", updated_at: "2016-09-27 17:16:05">, #<User id: 110, first_name: "Flossie", last_name: "Davis", email:
+"edmond@koch.org", title: "Internal Implementation Engineer", created_at: "2016-09-27 17:16:06", updated_at: "
+2016-09-27 17:16:06">, #<User id: 112, first_name: "Lloyd", last_name: "Davis", email: "alta@ebert.com", title
+: "Corporate Division Manager", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User
+id: 116, first_name: "Terrence", last_name: "Davis", email: "remington.reynolds@greenfeldermurazik.co", title:
+ "District Security Orchestrator", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<Us
+er id: 117, first_name: "Casimir", last_name: "Doyle", email: "dean.bergstrom@ruel.org", title: "Customer Resp
+onse Associate", created_at: "2016-09-27 17:16:06", updated_at: "2016-09-27 17:16:06">, #<User id: 185, first_
+name: "Urban", last_name: "Dare", email: "elmo@herzog.io", title: "Lead Accounts Planner", created_at: "2016-0
+9-27 17:16:06", updated_at: "2016-09-27 17:16:06">]
+
+-------------------> 9.Configure a pagination gem, and learn how to use it.
+Configured 'will-paginate'
+
+-------------------> 10.Add a search bar at the top of your rails application.
+Done! But somehow pagination will not work with search bar?
